@@ -1,0 +1,95 @@
+{% extends "ng_base.html" %}
+
+{% block content %}
+    <h1>Upload Ninja Gaiden III (US) Rom Here</h1>
+    <form action = "/ng3_upload" method = "POST" enctype = "multipart/form-data">
+      <p><input type = "file" name = "file" class="button" accept=".nes"/>
+      
+      <div class="grid-container">
+
+        <div class="grid-container">
+        <div class="grid-item" style="grid-column: 1; grid-row: 1 / 4">
+          <p>Customize Ryu sprite. See color codes below.</p>
+          <div class="infotext">Nes Palette</div>
+          <img src="static/nes_palette.png">
+        </div>
+        <div class="grid-item"  style="grid-column: 2; grid-row: 1">
+          <p>Ryu Skin</p>
+          <select name="skin" id="skin">
+            <option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="0A">0A</option><option value="0B">0B</option><option value="0C">0C</option><option value="0D">0D</option><option value="0E">0E</option><option value="0F">0F</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="1A">1A</option><option value="1B">1B</option><option value="1C">1C</option><option value="1D">1D</option><option value="1E">1E</option><option value="1F">1F</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="2A">2A</option><option value="2B">2B</option><option value="2C">2C</option><option value="2D">2D</option><option value="2E">2E</option><option value="2F">2F</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35" selected>35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="3A">3A</option><option value="3B">3B</option><option value="3C">3C</option><option value="3D">3D</option><option value="3E">3E</option><option value="3F">3F</option>
+          </select>
+        </div>
+        <div class="grid-item" style="grid-column: 2; grid-row: 2">
+          <p>Ryu Clothes</p>
+          <select name="clothes" id="clothes">
+            <option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="0A">0A</option><option value="0B">0B</option><option value="0C">0C</option><option value="0D">0D</option><option value="0E">0E</option><option value="0F">0F</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="1A">1A</option><option value="1B">1B</option><option value="1C">1C</option><option value="1D">1D</option><option value="1E">1E</option><option value="1F">1F</option><option value="20">20</option><option value="21">21</option><option value="22" selected>22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="2A">2A</option><option value="2B">2B</option><option value="2C">2C</option><option value="2D">2D</option><option value="2E">2E</option><option value="2F">2F</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="3A">3A</option><option value="3B">3B</option><option value="3C">3C</option><option value="3D">3D</option><option value="3E">3E</option><option value="3F">3F</option>
+          </select>
+        </div>
+        <div class="grid-item" style="grid-column: 2; grid-row: 3">
+          <p>Ryu Outline</p>
+          <select name="outline" id="outline">
+            <option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07" selected>07</option><option value="08">08</option><option value="09">09</option><option value="0A">0A</option><option value="0B">0B</option><option value="0C">0C</option><option value="0D">0D</option><option value="0E">0E</option><option value="0F">0F</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="1A">1A</option><option value="1B">1B</option><option value="1C">1C</option><option value="1D">1D</option><option value="1E">1E</option><option value="1F">1F</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="2A">2A</option><option value="2B">2B</option><option value="2C">2C</option><option value="2D">2D</option><option value="2E">2E</option><option value="2F">2F</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="3A">3A</option><option value="3B">3B</option><option value="3C">3C</option><option value="3D">3D</option><option value="3E">3E</option><option value="3F">3F</option>
+          </select>
+        </div>
+        </div>
+
+        <div class="grid-item">
+          <p>Drop Shuffle</p>
+          <div class="infotext">This randomizes what is in each item, but not the item location itself or the cost</div>
+          <label class="switch">
+          <input type = "checkbox" name = "drop_shuffle" id = "drop_shuffle" value = "True" checked>
+          <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="grid-item">
+          <p>Starting Health</p>
+          <div class="infotext">Ryu normally starts with 16</div>
+          <input type = "number" name = "starting_health" id = "starting_health" min = "1" max="100" value="16">
+        </div>
+        
+        <div class="grid-item">
+          <p>Starting Lives</p>
+          <div class="infotext">Ryu normally starts with 2</div>
+          <input type = "number" name = "starting_lives" id = "starting_lives" min = "1" max="100" value="2">
+        </div>
+        
+        <div class="grid-item">
+          <p>Starting Continues</p>
+          <div class="infotext">Ryu normally starts with 5</div>
+          <input type = "number" name = "starting_continues" id = "starting_continues" min = "1" max="100" value = "5">
+        </div>
+        
+
+        
+        <div class="grid-item">
+          <p>Enemy Shuffle</p>
+          <div class="infotext">The enemies will spawn as they normally do, but be a randomly chosen enemy. Not all enemy sprites show correctly on each level</div>
+          <label class="switch">
+          <input type = "checkbox" name = "enemy_shuffle" id = "enemy_shuffle" value = "True" checked>
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Boss Shuffle</p>
+          <div class="infotext">The levels will progress normally but the boss will be randomly chosen</div>
+          <label class="switch">
+          <input type = "checkbox" name = "boss_shuffle" id = "boss_shuffle" value = "True" checked>
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Level Shuffle</p>
+          <div class="infotext">All individual screens are shuffled with the exception of the starting screen. This does include the bosses appearing at any time throughout the game</div>
+          <label class="switch">
+          <input type = "checkbox" name = "level_shuffle" id = "level_shuffle" value = "True">
+          <span class="slider"></span>
+          </label>
+        </div>
+
+      </div>
+      <p><input type ="submit" value="Let's fuckin go" class="button"/></p>
+    </form>
+{% endblock %}

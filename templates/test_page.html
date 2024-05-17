@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Upload Proving Grounds of the Mad Overlord Rom Here</h1>
+    <form action = "/test_upload" method = "POST" enctype = "multipart/form-data">
+      <!--<p><input type = "file" name = "file" class="button" accept=".nes"/>-->
+
+      <div class="grid-container">
+
+        <div class="grid-item">
+          <p>Test Item</p>
+          <label class="switch">
+          <input type ="checkbox" name ="test" id ="test" value ="True">
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Custom Text</p>
+          <label class="switch">
+          <input type = "checkbox" name = "custom_text" id = "custom_text_t" value = "True" checked>
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Easy Spell Names</p>
+          <label class="switch">
+          <input type = "checkbox" name = "easy_spells" id = "easy_spells_t" value = "True" checked>
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Stair Shuffle</p>
+          <label class="switch">
+          <input type = "checkbox" name = "stair_shuffle" id = "stair_shuffle_t" value = "True" checked>
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Key Shuffle</p>
+          <label class="switch">
+          <input type = "checkbox" name = "key_shuffle" id = "key_shuffle_t" value = "True" checked>
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Shop Shuffle</p>
+          <label class="switch">
+          <input type = "checkbox" name = "shop_shuffle" id = "shop_shuffle_t" value = "True" checked>
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Curse Shuffle</p>
+          <label class="switch">
+          <input type = "checkbox" name = "curse_shuffle" id = "curse_shuffle_t" value = "True">
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Disable Elevators</p>
+          <label class="switch">
+          <input type = "checkbox" name = "disable_elevator" id = "disable_elevator_t" value = "True">
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Monster Shuffle (doesn't update sprites)</p>
+          <label class="switch">
+          <input type = "checkbox" name = "monster_shuffle" id = "monster_shuffle_t" value = "True">
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Buff Coins</p>
+          <label class="switch">
+          <input type = "checkbox" name = "buff_coins" id = "buff_coins_t" value = "True">
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Procedurally Generated Maps (B1F-B9F)</p>
+          <label class="switch">
+          <input type = "checkbox" name = "proc_gen_map" id = "proc_gen_map_t" value = "True">
+          <span class="slider"></span>
+          </label>
+        </div>
+
+
+      </div>
+      <p><input type ="submit" value="Let's fuckin go" class="button"/></p>
+    </form>
+{% endblock %}

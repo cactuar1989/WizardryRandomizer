@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Mazed and Confused</title>
+</head>
+<body>
+<div id="start">
+WASD or Cursor keys to move<br />
+Space bar or left-click to interact<br />
+Works on some mobile browsers<br />
+<img src="static/assets/werdna unidentified.gif" alt="homie">
+<br />
+<button onclick="startGame()" id="button">START</button>
+</div>
+<!-- set black background, hide scroll, set font -->
+<style>
+html,
+body {
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    height: 100%;
+}
+@font-face {
+    font-family: "prstart";
+    font-style: normal;
+    font-weight: 400;
+    src: url("{{ url_for ('static', filename='./assets/fonts/prstart.ttf') }}");
+}
+#start {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    block-size: fit-content;
+    width: fit-content;
+    padding: 10px;
+    text-align: center;
+    border: 5px solid white;
+    border-radius: 5px;
+    font-family: "prstart";
+    color: white;
+}
+#button {
+    font-family: "prstart";
+    color: white;
+    background-color: black;
+    border: 5px solid white;
+    border-radius: 5px;
+    padding: 8px;
+}
+</style>
+<!-- load phaser v3.20.1 game engine -->
+<script src="{{ url_for ('static', filename='js/phaser.js') }}"></script>
+<!-- load maps -->
+<script src="{{ url_for ('static', filename='js/maps/map_data.js') }}"></script>
+<script src="{{ url_for ('static', filename='js/maps/map_events.js') }}"></script>
+<!-- load scenes -->
+<script src="{{ url_for ('static', filename='js/scenes/BootScene.js') }}"></script>
+<script src="{{ url_for ('static', filename='js/scenes/IntroScene.js') }}"></script>
+<script src="{{ url_for ('static', filename='js/scenes/MainScene.js') }}"></script>
+<script src="{{ url_for ('static', filename='js/scenes/EndScene.js') }}"></script>
+<script src="{{ url_for ('static', filename='js/scenes/DialogScene.js') }}"></script>
+<script src="{{ url_for ('static', filename='js/scenes/LevelChangeScene.js') }}"></script>
+<!-- load game settings -->
+<script src="{{ url_for ('static', filename='js/game.js') }}"></script>
+</body>
+</html>

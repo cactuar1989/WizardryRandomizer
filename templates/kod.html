@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <script>
+  function updatePreset() {
+    var preset = document.getElementById("preset").value;
+    switch(preset) {
+      case "vanilla":
+        document.getElementById('custom_text').checked = false;
+        document.getElementById('easy_spells').checked = false;
+        document.getElementById('stair_shuffle').checked = false;
+        document.getElementById('key_shuffle').checked = false;
+        document.getElementById('shop_shuffle').checked = false;
+        document.getElementById('curse_shuffle').checked = false;
+        document.getElementById('boss_shuffle').checked = false;
+        document.getElementById('monster_shuffle').checked = false;
+        document.getElementById('boost_experience').value = 1;
+        document.getElementById('proc_gen_map').checked = false;
+        break;
+      case "easy":
+        document.getElementById('custom_text').checked = true;
+        document.getElementById('easy_spells').checked = true;
+        document.getElementById('stair_shuffle').checked = false;
+        document.getElementById('key_shuffle').checked = true;
+        document.getElementById('shop_shuffle').checked = true;
+        document.getElementById('curse_shuffle').checked = false;
+        document.getElementById('boss_shuffle').checked = false;
+        document.getElementById('monster_shuffle').checked = false;
+        document.getElementById('boost_experience').value = 10;
+        document.getElementById('proc_gen_map').checked = false;
+        break;
+      case "normal":
+        document.getElementById('custom_text').checked = true;
+        document.getElementById('easy_spells').checked = true;
+        document.getElementById('stair_shuffle').checked = true;
+        document.getElementById('key_shuffle').checked = true;
+        document.getElementById('shop_shuffle').checked = true;
+        document.getElementById('curse_shuffle').checked = false;
+        document.getElementById('boss_shuffle').checked = true;
+        document.getElementById('monster_shuffle').checked = false;
+        document.getElementById('boost_experience').value = 5;
+        document.getElementById('proc_gen_map').checked = false;
+        break;
+      case "hard":
+        document.getElementById('custom_text').checked = true;
+        document.getElementById('easy_spells').checked = false;
+        document.getElementById('stair_shuffle').checked = true;
+        document.getElementById('key_shuffle').checked = true;
+        document.getElementById('shop_shuffle').checked = true;
+        document.getElementById('curse_shuffle').checked = true;
+        document.getElementById('boss_shuffle').checked = true;
+        document.getElementById('monster_shuffle').checked = true;
+        document.getElementById('boost_experience').value = 1;
+        document.getElementById('proc_gen_map').checked = true;
+        break;
+    }
+  }
+  </script>
+    <h1>Upload Knight of Diamonds Rom Here</h1>
+    <form action = "/kod_upload" method = "POST" enctype = "multipart/form-data">
+      <p><input type = "file" name = "file" class="button" accept=".nes"/>
+      <label for="preset">Option Presets:</label>
+      <select name="preset" id="preset" onchange="updatePreset()">
+        <option value="easy">Weenie Hut General</option>
+        <option value="vanilla">Vanilla</option>
+        <option value="normal" selected>Normal</option>
+        <option value="hard">Fuck Me Up</option>
+      </select> 
+      
+      <div class="grid-container">
+        <div class="grid-item">
+          <p>Custom Text</p>
+          <label class="switch">
+          <input type = "checkbox" name = "custom_text" id = "custom_text" value = "True" checked>
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Easy Spell Names</p>
+          <label class="switch">
+          <input type = "checkbox" name = "easy_spells" id = "easy_spells" value = "True" checked>
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Stair Shuffle</p>
+          <label class="switch">
+          <input type = "checkbox" name = "stair_shuffle" id = "stair_shuffle" value = "True" checked>
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Key Shuffle</p>
+          <label class="switch">
+          <input type = "checkbox" name = "key_shuffle" id = "key_shuffle" value = "True" checked>
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Shop Shuffle</p>
+          <label class="switch">
+          <input type = "checkbox" name = "shop_shuffle" id = "shop_shuffle" value = "True" checked>
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Curse Shuffle</p>
+          <label class="switch">
+          <input type = "checkbox" name = "curse_shuffle" id = "curse_shuffle" value = "True">
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Monster Shuffle (doesn't update sprites)</p>
+          <label class="switch">
+          <input type = "checkbox" name = "monster_shuffle" id = "monster_shuffle" value = "True">
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Boss Shuffle</p>
+          <label class="switch">
+          <input type = "checkbox" name = "boss_shuffle" id = "boss_shuffle" value = "True" checked>
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Procedurally Generated Maps (B1F-B5F)</p>
+          <label class="switch">
+          <input type = "checkbox" name = "proc_gen_map" id = "proc_gen_map" value = "True">
+          <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="grid-item">
+          <p>Boost Experience</p>
+          <label for="boost_experience">E.P. multiplier:</label>
+          <input type = "number" name = "boost_experience" id="boost_experience" min="1" max="99" value="5">
+        </div>
+
+
+      </div>
+      <p><input type ="submit" value="Let's fuckin go" class="button"/></p>
+    </form>
+{% endblock %}

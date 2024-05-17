@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Welcome to Cactuar's Wizardry Randomizer!</h1>
+  I hope you have fun playing. Pick which NES Wizardry rom you want to randomize from the top menu.<br>
+  Currently the randomizer only works fully on the English rom versions.<br>
+  Please let me know how to improve the game.<br>
+  <img style="width: 100px; height: auto; padding: 20px 0px 0px 20px;" src="static/tombstone.png">
+  <br>
+  <br>
+
+<div class="text-container">
+  <h2>Explanation of Options</h2>
+  <ul>
+    <li>Custom Text: Toggle any text changes I might've made to the game.
+    <li>Easy Spell Names: Spells are renamed to be more obvious about what the effect will be.
+    <li>Stair Shuffle: Stairs will be in the same location as vanilla, but on descent will lead to a different floor than expected.
+    <li>Key Shuffle: Key or key items will be obtained in the same location but the item you get will be random.
+    <li>Shop Shuffle: Randomized equipment in Boltac's Trading Post. In KoD, this also means randomized item drops. Doesn't affect key items.
+    <li>Curse Shuffle: Each item has a 25% chance to be cursed.
+    <li>Buff Coins: Creeping Coins have increased HP which also means their breath attack hits harder.
+    <li>Disable Elevators: Gotta take the stairs. Doesn't affect chutes or teleports.
+    <li>Boss Shuffle: In KoD, the bosses (Kobold King and KoD armor pieces) will be in the same spots but be shuffled around. Each boss will still drop the correct item.
+    <li>Monster Shuffle: Each monster ID is shuffled. Werdna on 1F? Maybe. Once the seed is made floors will stay the same so at least you know what to expect.
+    <li>Boost Experience: Each kill gives an experience multiplier. Still takes into account party sharing.
+    <li>Procedurally Generated Floors: I randomize the floor layout. A pathing function SHOULD make all key items and stairs reachable but I'm no professional.
+  </ul>
+</div>
+
+<br>
+<br>
+
+<div class="text-container">
+  <h2>Recent Updates</h2>
+  <ul>
+    <li>05/05/2023 - Added a game I made in HTML5 and JavaScript. Click the Wizardry logo to play or go to /lost.
+    <li>04/20/2023 - Added NG3 randomizer.
+    <li>08/17/2022 - Moved site from HTTP to HTTPS.
+    <li>08/12/2022 - Replaced radio buttons with toggle switches. Hope nothing breaks.
+    <li>08/11/2022 - Added Boss and Key Item shuffler for LoL. This includes Po'le as a boss but not Moat Monsters. For Key Items, this affect the 3F trader and L'kbreth as well. Logic is in place to prevent items locked behind trade requirements but please reach out if I overlooked a bug. Minor html fixes and increased EP multiplier max to 99.
+    <li>08/09/2022 - Added EP Multiplier and Monster Shuffle for LoL.
+    <li>08/08/2022 - Updated procedural generation to include all floors except final floor in PGotMO, KoD and LoL. Also easy spell names for KoD and LoL.
+    <li>08/05/2022 - Added LoL Rando. The monsters aren't evenly spaced in rom so I haven't figured out the monster shuffle yet. Same issue with the EP boost. Also added a procedurally generated first floor option for PGotMO. This is just for testing and there's no guarantee anything is accessible.
+    <li>08/03/2022 - Minor KoD text updates.
+    <li>08/02/2022 - Added PGotMO easy spell names option. Some are still kind of confusing but there is a 9 char limit.
+    <li>07/31/2022 - Added KoD stair shuffle option.
+    <li>07/30/2022 - Fixed KoD potion of malor bug. First premade character is supposed to always have one but shop shuffle would randomize it. Added explanation for options below.
+    <li>07/29/2022 - Moved site to wizardry-rando.com. Fixed PGotMO curse shuffle bug. If shop shuffle was off, curse shuffle code was skipped. Added KoD curse shuffle, monster shuffle, key shuffle, shop shuffle, EP multiplier.
+    <li>07/28/2022 - Added KoD randomizer, boss shuffle only option available at this time. Added placeholder for LoL.
+    <li>07/25/2022 - Added PGotMO monster shuffle, idk how to fix the sprites yet.
+    <li>07/24/2022 - Site moved to port 80.
+    <li>07/23/2022 - Added PGotMO disable elevator option.
+    <li>07/22/2022 - Added PGotMO buff coins option.
+    <li>07/21/2022 - Added PGotMO randomizer. First day website was up.
+  </ul>
+</div>
+{% endblock %}

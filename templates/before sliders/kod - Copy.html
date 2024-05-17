@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <script>
+  function updatePreset() {
+    var preset = document.getElementById("preset").value;
+    switch(preset) {
+      case "vanilla":
+        document.getElementById('custom_text_f').checked = true;
+        document.getElementById('easy_spells_f').checked = true;
+        document.getElementById('stair_shuffle_f').checked = true;
+        document.getElementById('key_shuffle_f').checked = true;
+        document.getElementById('shop_shuffle_f').checked = true;
+        document.getElementById('curse_shuffle_f').checked = true;
+        document.getElementById('boss_shuffle_f').checked = true;
+        document.getElementById('monster_shuffle_f').checked = true;
+        document.getElementById('boost_experience').value = 1;
+        document.getElementById('proc_gen_map_f').checked = true;
+        break;
+      case "easy":
+        document.getElementById('custom_text_t').checked = true;
+        document.getElementById('easy_spells_t').checked = true;
+        document.getElementById('stair_shuffle_f').checked = true;
+        document.getElementById('key_shuffle_t').checked = true;
+        document.getElementById('shop_shuffle_t').checked = true;
+        document.getElementById('curse_shuffle_f').checked = true;
+        document.getElementById('boss_shuffle_f').checked = true;
+        document.getElementById('monster_shuffle_f').checked = true;
+        document.getElementById('boost_experience').value = 10;
+        document.getElementById('proc_gen_map_f').checked = true;
+        break;
+      case "normal":
+        document.getElementById('custom_text_t').checked = true;
+        document.getElementById('easy_spells_t').checked = true;
+        document.getElementById('stair_shuffle_t').checked = true;
+        document.getElementById('key_shuffle_t').checked = true;
+        document.getElementById('shop_shuffle_t').checked = true;
+        document.getElementById('curse_shuffle_f').checked = true;
+        document.getElementById('boss_shuffle_t').checked = true;
+        document.getElementById('monster_shuffle_f').checked = true;
+        document.getElementById('boost_experience').value = 5;
+        document.getElementById('proc_gen_map_f').checked = true;
+        break;
+      case "hard":
+        document.getElementById('custom_text_t').checked = true;
+        document.getElementById('easy_spells_f').checked = true;
+        document.getElementById('stair_shuffle_t').checked = true;
+        document.getElementById('key_shuffle_t').checked = true;
+        document.getElementById('shop_shuffle_t').checked = true;
+        document.getElementById('curse_shuffle_t').checked = true;
+        document.getElementById('boss_shuffle_t').checked = true;
+        document.getElementById('monster_shuffle_t').checked = true;
+        document.getElementById('boost_experience').value = 1;
+        document.getElementById('proc_gen_map_t').checked = true;
+        break;
+    }
+  }
+  </script>
+    <h1>Upload Knight of Diamonds Rom Here</h1>
+    <form action = "/kod_upload" method = "POST" enctype = "multipart/form-data">
+      <p><input type = "file" name = "file" class="button" accept=".nes"/>
+      <label for="preset">Option Presets:</label>
+      <select name="preset" id="preset" onchange="updatePreset()">
+        <option value="easy">Weenie Hut General</option>
+        <option value="vanilla">Vanilla</option>
+        <option value="normal" selected>Normal</option>
+        <option value="hard">Fuck Me Up</option>
+      </select> 
+      
+      <div class="grid-container">
+        <div class="grid-item">
+          <p>Custom Text</p>
+          <input type = "radio" name = "custom_text" id = "custom_text_t" value = "True" checked>
+          <label for = "custom_text_t">True</label>
+          <input type = "radio" name = "custom_text" id = "custom_text_f" value = "False">
+          <label for = "custom_text_f">False</label><br>
+        </div>
+        <div class="grid-item">
+        <p>Easy Spell Names</p>
+          <input type = "radio" name = "easy_spells" id = "easy_spells_t" value = "True" checked>
+          <label for = "easy_spells_t">True</label>
+          <input type = "radio" name = "easy_spells" id = "easy_spells_f" value = "False">
+          <label for = "easy_spells_f">False</label><br>
+        </div>
+        <div class="grid-item">
+          <p>Stair Shuffle</p>
+          <input type = "radio" name = "stair_shuffle" id = "stair_shuffle_t" value = "True" checked>
+          <label for = "stair_shuffle_t">True</label>
+          <input type = "radio" name = "stair_shuffle" id = "stair_shuffle_f" value = "False">
+          <label for = "stair_shuffle_f">False</label><br>
+        </div>
+        <div class="grid-item">
+          <p>Key Shuffle</p>
+          <input type = "radio" name = "key_shuffle" id = "key_shuffle_t" value = "True" checked>
+          <label for = "key_shuffle_t">True</label>
+          <input type = "radio" name = "key_shuffle" id = "key_shuffle_f" value = "False">
+          <label for = "key_shuffle_f">False</label><br>
+        </div>
+        <div class="grid-item">
+          <p>Shop Shuffle</p>
+          <input type = "radio" name = "shop_shuffle" id = "shop_shuffle_t" value = "True" checked>
+          <label for = "shop_shuffle_t">True</label>
+          <input type = "radio" name = "shop_shuffle" id = "shop_shuffle_f" value = "False">
+          <label for = "shop_shuffle_f">False</label><br>
+        </div>
+        <div class="grid-item">
+          <p>Curse Shuffle</p>
+          <input type = "radio" name = "curse_shuffle" id = "curse_shuffle_t" value = "True">
+          <label for = "curse_shuffle_t">True</label>
+          <input type = "radio" name = "curse_shuffle" id = "curse_shuffle_f" value = "False" checked>
+          <label for = "curse_shuffle_f">False</label><br>
+        </div>
+        <div class="grid-item">
+          <p>Monster Shuffle (doesn't update sprites)</p>
+          <input type = "radio" name = "monster_shuffle" id = "monster_shuffle_t" value = "True">
+          <label for = "monster_shuffle_t">True</label>
+          <input type = "radio" name = "monster_shuffle" id = "monster_shuffle_f" value = "False" checked>
+          <label for = "monster_shuffle_f">False</label><br>
+        </div>
+        <div class="grid-item">
+          <p>Boss Shuffle</p>
+          <input type = "radio" name = "boss_shuffle" id = "boss_shuffle_t" value = "True" checked>
+          <label for = "boss_shuffle_t">True</label>
+          <input type = "radio" name = "boss_shuffle" id = "boss_shuffle_f" value = "False">
+          <label for = "boss_shuffle_f">False</label><br>
+        </div>
+        <div class="grid-item">
+          <p>Procedurally Generated Maps (B1F-B5F)</p>
+          <input type = "radio" name = "proc_gen_map" id = "proc_gen_map_t" value = "True">
+          <label for = "proc_gen_map_t">True</label>
+          <input type = "radio" name = "proc_gen_map" id = "proc_gen_map_f" value = "False" checked>
+          <label for = "proc_gen_map_f">False</label><br>
+        </div>
+        <div class="grid-item">
+          <p>Boost Experience</p>
+          <label for="boost_experience">E.P. multiplier:</label>
+          <input type = "number" name = "boost_experience" id="boost_experience" min="1" max="99" value="5">
+        </div>
+
+
+      </div>
+      <p><input type ="submit" value="Let's fuckin go" class="button"/></p>
+    </form>
+{% endblock %}

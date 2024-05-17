@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }} "/>
+  <!--
+  <style>@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");</style>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }} "/>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" />
+  -->
+  <script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+  <script>
+  $(document).ready(function() {
+    /*
+    * Gets current window path after the / then
+    * highlights corresponding link in navbar
+    */
+    var path = window.location.pathname;
+    if (path == "/" || path == "/index"){
+        $('a[href="/index"]').removeClass('inactive').addClass('active');
+    }
+    else if (path == "/pgotmo" || path == "/pgotmo_upload") {
+        $('a[href="/pgotmo"]').removeClass('inactive').addClass('active');
+    }
+    else if (path == "/kod" || path == "/kod_upload"){
+        $('a[href="/kod"]').removeClass('inactive').addClass('active');
+    }
+    else if (path == "/lol" || path == "/lol_upload"){
+        $('a[href="/lol"]').removeClass('inactive').addClass('active');
+    }
+    else if (path == "/ng3" || path == "/ng3_upload"){
+        $('a[href="/ng3"]').removeClass('inactive').addClass('active');
+    }
+    else {
+        $('a[href="/index"]').removeClass('inactive').addClass('active');
+    }
+  });
+  </script>
+</head>
+<body>
+  <!-- start nav -->
+  <div class="topnav">
+    <a class="inactive" href="{{ url_for('index') }}">Cactuar's Wizardry Randomizer</a>
+    <a class="inactive" href="{{ url_for('pgotmo') }}">PGotMO</a>
+    <a class="inactive" href="{{ url_for('kod') }}">KoD</a>
+    <a class="inactive" href="{{ url_for('lol') }}">LoL</a>
+    <a class="inactive" href="{{ url_for('ng3') }}">NG3</a>
+    <a id="wizlogo" href="{{ url_for('lost') }}"><img style="display: block; padding: 5px 0px 5px 10px;" src="static/wizlogo.png"></a>
+  </div> 
+  <!-- end nav -->
+  <!-- start main content -->
+  <div id="main-content" class="main-content">
+  {% block content %}
+  {% endblock %}
+  <br>
+  <br>
+  <a href="mailto:wizardrycactuar@gmail.com">email Cactuar suggestions/issues</a>
+  </div>
+</body>
+</html>
